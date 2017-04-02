@@ -1,0 +1,30 @@
+{
+  "name": "ifairy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Penggggg/ifairy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Penggggg/ifairy/issues"
+  },
+  "homepage": "https://github.com/Penggggg/ifairy#readme",
+  "dependencies": {
+    "koa": "^2.2.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-logs-full": "0.0.8",
+    "koa-router": "^7.0.1",
+    "koa-static2": "^0.1.8",
+    "mongoose": "^4.9.2"
+  },
+  "devDependencies": {
+    "@types/node": "^7.0.12"
+  }
+}
