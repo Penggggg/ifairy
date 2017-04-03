@@ -36,17 +36,16 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
-var classify_new_controller_1 = require("./manager/classify/classify-new.controller");
-var classify_all_controller_1 = require("./manager/classify/classify-all.controller");
-exports.default = function (router) {
-    router.get('/', function (ctx) { return __awaiter(_this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            ctx.body = 'Hello Ko123a';
-            return [2 /*return*/];
-        });
-    }); });
-    /**管理端 */
-    /**分类-新增 */
-    router.post('/mapi/v1/classify-new', classify_new_controller_1.mClassifyNew);
-    router.get('/mapi/v1/classify-all', classify_all_controller_1.mClassifyAll);
-};
+var classify_model_1 = require("../../../model/classify/classify.model");
+exports.mClassifyAll = function (ctx) { return __awaiter(_this, void 0, void 0, function () {
+    var data;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0: return [4 /*yield*/, classify_model_1.default.findAll()];
+            case 1:
+                data = _a.sent();
+                ctx.body = data;
+                return [2 /*return*/];
+        }
+    });
+}); };
