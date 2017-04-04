@@ -4,7 +4,12 @@ import { ISclassify } from '../../interface/schema.interface';
 export let ClassifySchema = new Mongoose.Schema({
     classifyTitle: String,
     keyCode: String,
-    children: String,
+    children: [{
+        classifyName: String,
+        classifyInfo: String,
+        keyCode: String,
+        imgURL: String
+    }],
     meta: {
         createdTime: {
             type: Date,
@@ -38,6 +43,12 @@ ClassifySchema.statics.save = function( classifyTitle, keyCode, children ) {
         let model = this.model('Classify');
         new model({ classifyTitle, keyCode, children })
             .save(( err ) => returnData( err, resolve, reject ))
+    })
+}
+
+ClassifySchema.statics.checkByTitle = function( classifyTitle ) {
+    return new Promise(( resolve, reject ) => {
+        this.findOne({ classifyTitle }, ( err, data ) => returnData( err, resolve, reject, data ))
     })
 }
 

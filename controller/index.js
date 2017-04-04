@@ -37,7 +37,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 var classify_new_controller_1 = require("./manager/classify/classify-new.controller");
-var classify_all_controller_1 = require("./manager/classify/classify-all.controller");
+var classify_check_controller_1 = require("./manager/classify/classify-check.controller");
 exports.default = function (router) {
     router.get('/', function (ctx) { return __awaiter(_this, void 0, void 0, function () {
         return __generator(this, function (_a) {
@@ -48,5 +48,6 @@ exports.default = function (router) {
     /**管理端 */
     /**分类-新增 */
     router.post('/mapi/v1/classify-new', classify_new_controller_1.mClassifyNew);
-    router.get('/mapi/v1/classify-all', classify_all_controller_1.mClassifyAll);
+    router.get('/mapi/v1/classify-all', classify_check_controller_1.mClassifyAll);
+    router.get('/mapi/v1/classify-exist', classify_check_controller_1.mClassifyIsExist);
 };

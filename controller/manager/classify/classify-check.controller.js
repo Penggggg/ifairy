@@ -49,3 +49,18 @@ exports.mClassifyAll = function (ctx) { return __awaiter(_this, void 0, void 0, 
         }
     });
 }); };
+exports.mClassifyIsExist = function (ctx) { return __awaiter(_this, void 0, void 0, function () {
+    var classifyTitle, data;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                classifyTitle = ctx.request.query.classifyTitle;
+                return [4 /*yield*/, classify_model_1.default.checkByTitle(classifyTitle)];
+            case 1:
+                data = _a.sent();
+                console.log("data: " + data);
+                ctx.body = data ? true : false;
+                return [2 /*return*/];
+        }
+    });
+}); };

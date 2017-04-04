@@ -5,6 +5,9 @@ export interface __IPostClassifyNew {
     keyCode: string
     children: Array<{
         classifyName: string
+        classifyInfo: string
         keyCode: string
+        imgURL: string
     }> | string
 }
+    

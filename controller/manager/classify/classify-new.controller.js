@@ -47,7 +47,8 @@ exports.mClassifyNew = function (ctx) { return __awaiter(_this, void 0, void 0, 
             case 1:
                 result = _b.sent();
                 ctx.body = JSON.stringify({
-                    msg: 'ok'
+                    msg: 'success',
+                    status: '200'
                 });
                 return [2 /*return*/];
         }

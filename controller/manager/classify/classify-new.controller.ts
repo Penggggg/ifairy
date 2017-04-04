@@ -9,7 +9,8 @@ export let mClassifyNew = async( ctx: Koa.Context ) => {
     let result = await classifyModel.save( classifyTitle, keyCode, children );
 
     ctx.body = JSON.stringify({
-        msg: 'ok'
+        msg: 'success',
+        status: '200'
     })
 
 }

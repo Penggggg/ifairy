@@ -4,7 +4,12 @@ var Mongoose = require("mongoose");
 exports.ClassifySchema = new Mongoose.Schema({
     classifyTitle: String,
     keyCode: String,
-    children: String,
+    children: [{
+            classifyName: String,
+            classifyInfo: String,
+            keyCode: String,
+            imgURL: String
+        }],
     meta: {
         createdTime: {
             type: Date,
@@ -37,6 +42,12 @@ exports.ClassifySchema.statics.save = function (classifyTitle, keyCode, children
         var model = _this.model('Classify');
         new model({ classifyTitle: classifyTitle, keyCode: keyCode, children: children })
             .save(function (err) { return returnData(err, resolve, reject); });
+    });
+};
+exports.ClassifySchema.statics.checkByTitle = function (classifyTitle) {
+    var _this = this;
+    return new Promise(function (resolve, reject) {
+        _this.findOne({ classifyTitle: classifyTitle }, function (err, data) { return returnData(err, resolve, reject, data); });
     });
 };
 function returnData(err, resolve, reject, result) {
